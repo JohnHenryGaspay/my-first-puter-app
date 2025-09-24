@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register My Puter App</title>
+  <script src="https://js.puter.com/v2/"></script>
+</head>
+<body>
+  <script>
+    (async () => {
+      // (1) Generate a unique app name
+      let appName = puter.randName();
+
+      // (2) Point to your hosted index.html file
+      let app = await puter.apps.create(appName, "http://localhost:3000/index.html", "My First Puter App");
+
+      // (3) Show info on screen
+      puter.print(`Created app "${app.name}" (UID: ${app.uid})`);
+    })();
+  </script>
+
+  <footer>
+    Powered by <a href="https://developer.puter.com" target="_blank">Puter</a>
+  </footer>
+</body>
+</html>
